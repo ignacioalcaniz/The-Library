@@ -1,14 +1,24 @@
+import "./../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import { ItemListContainer } from "./componets/ItemListContainer/ItemListContainer";
+import { NavBar } from "./componets/NavBar/NavBar";
+import { Title } from "./componets/Title/Title";
+
+
 
 function App() {
     return(
-        <div>
-            <h1 style={{textAlign:"center",backgroundColor:"blue",border:"2px solid black",borderRadius:"10px"}} >The Library</h1>
+
+        <>
+        <Title/>
+        <NavBar/>
+        <ItemListContainer/>
+        </>
+    )
+   
         
-            
-        </div>
         
 
-    ) 
+     
     
 }
 export default App;
