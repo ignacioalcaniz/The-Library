@@ -1,0 +1,18 @@
+.carta{
+    border: 2px solid black;
+    border-radius: 5px;
+   
+}
+h3{
+    background-color: blue;
+}
+h4{
+    background-color: blue;
+}
+img{
+    width: 100%;
+
+}
+p{
+    text-decoration: underline;
+}

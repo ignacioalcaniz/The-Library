@@ -1,0 +1,22 @@
+.BarraNavegacion{
+   display: flex;
+   flex-direction: row;
+   row-gap: 0%;
+   justify-content: center;
+ align-items: center;
+
+}
+input{
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 80%;
+   
+   
+}
+button{
+    height: 70px;
+}
+img{
+    height: 10%;
+}

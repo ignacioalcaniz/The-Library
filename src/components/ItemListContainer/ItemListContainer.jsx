@@ -8,39 +8,39 @@ export const ItemListContainer = () => {
       <section className="row m-2">
         <Card nombre="Las venas abiertas de lationoamerica"
           foto="img/lasVenasAbiertas.jpg"
-          like="img/heart.png"
+          boton="img/heart.png"
           descripcion="el mejor libro del mundo "
         ></Card>
 
         <Card nombre="Las venas abiertas de lationoamerica"
           foto="img/lasVenasAbiertas.jpg"
-          like="img/heart.png"
+          boton="img/heart.png"
           descripcion="el mejor libro del mundo "
         ></Card>
 
         <Card nombre="Las venas abiertas de lationoamerica"
           foto="img/lasVenasAbiertas.jpg"
-          like="img/heart.png"
+          boton="img/heart.png"
           descripcion="el mejor libro del mundo "
         ></Card>
 
         <Card nombre="Las venas abiertas de lationoamerica"
           foto="img/lasVenasAbiertas.jpg"
-          like="img/heart.png"
-          descripcion="el mejor libro del mundo "
-        ></Card>
-
-
-        <Card nombre="Las venas abiertas de lationoamerica"
-          foto="img/lasVenasAbiertas.jpg"
-          like="img/heart.png"
+          boton="img/heart.png"
           descripcion="el mejor libro del mundo "
         ></Card>
 
 
         <Card nombre="Las venas abiertas de lationoamerica"
           foto="img/lasVenasAbiertas.jpg"
-          like="img/heart.png"
+          boton="img/heart.png"
+          descripcion="el mejor libro del mundo "
+        ></Card>
+
+
+        <Card nombre="Las venas abiertas de lationoamerica"
+          foto="img/lasVenasAbiertas.jpg"
+          boton="img/heart.png"
           descripcion="el mejor libro del mundo "
         ></Card>
 
