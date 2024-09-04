@@ -1,79 +1,101 @@
 [
-    {
-      "id": "1",
-      "titulo": "Harry Potter y la piedra filosofal",
-      "autor": "J.K. Rowling",
-      "descripcion": "Con las manos temblorosas, Harry le dio la vuelta al sobre y vio un sello de lacre púrpura con un escudo de armas: un león, un águila, un tejón y una serpiente, que rodeaban una gran letra H. Harry Potter nunca había oído nada sobre Hogwarts cuando las cartas comienzan a caer en el felpudo del número cuatro de Privet Drive. Escritas en tinta verde en un pergamino amarillento con un sello morado, sus horribles tíos las han confiscado velozmente. En su undécimo cumpleaños, un hombre gigante de ojos negros llamado Rubeus Hagrid aparece con una noticia extraordinaria: Harry Potter es un mago y tiene una plaza en el Colegio Hogwarts de Magia y Hechicería. ¡Una aventura increíble está a punto de empezar! Tema musical compuesto por James Hannigan.",
-      "imagen": "https://pendulo.com/imagenes_grandes/9788498/978849838948.GIF"
-    },
-    {
-      "id": "2",
-      "titulo": "El hobbit",
-      "autor": "J.R.R. Tolkien",
-      "descripcion": "Bilbo Bolsón, un hobbit que disfruta de una vida tranquila en su hogar, es sacado de su zona de confort por el mago Gandalf y un grupo de enanos para recuperar un tesoro robado por el dragón Smaug.",
-      "imagen": "https://imagessl6.casadellibro.com/a/l/t7/56/9788445000656.jpg"
-    },
-    {
-      "id": "3",
-      "titulo": "1984",
-      "autor": "George Orwell",
-      "descripcion": "En una sociedad totalitaria y opresiva, el protagonista, Winston Smith, lucha contra el régimen del Partido, que controla todos los aspectos de la vida y manipula la verdad.",
-      "imagen": "https://m.media-amazon.com/images/I/61kjuGfZyML.jpg"
-    },
-    {
-      "id": "4",
-      "titulo": "Orgullo y prejuicio",
-      "autor": "Jane Austen",
-      "descripcion": "Elizabeth Bennet, una joven inteligente y enérgica, navega por las complejidades del amor, el matrimonio y la moralidad en la Inglaterra del siglo XIX.",
-      "imagen": "https://www.agapea.com/Alianza-Editorial/Orgullo-y-prejuicio-i6n17428974.jpg"
-    },
-    {
-      "id": "5",
-      "titulo": "Cien años de soledad",
-      "autor": "Gabriel García Márquez",
-      "descripcion": "La historia de la familia Buendía a lo largo de siete generaciones en el pueblo ficticio de Macondo, llena de realismo mágico y eventos extraordinarios.",
-      "imagen": "https://www.mejoreslibros.top/wp-content/uploads/2020/09/Cien-anos-de-Soledad-50-Aniversario-1141x1536.jpg"
-    },
-    {
-      "id": "6",
-      "titulo": "El gran Gatsby",
-      "autor": "F. Scott Fitzgerald",
-      "descripcion": "En la década de 1920, el misterioso millonario Jay Gatsby organiza lujosas fiestas en su mansión en Long Island mientras intenta recuperar el amor de su vida, Daisy Buchanan.",
-      "imagen": "https://2.bp.blogspot.com/-hinI02TQ1iM/Vrt7k8sth_I/AAAAAAAAFjs/h6OfPfKC_Rg/s1600/elgrangatsbyportada.jpg"
-    },
-    {
-      "id": "7",
-      "titulo": "Matar a un ruiseñor",
-      "autor": "Harper Lee",
-      "descripcion": "En los años 30, en el sur de los Estados Unidos, la joven Scout Finch observa y experimenta las injusticias raciales a través de los ojos de su padre, el abogado Atticus Finch, quien defiende a un hombre negro acusado injustamente.",
-      "imagen": "https://http2.mlstatic.com/D_NQ_NP_992079-MLM47037519198_082021-F.jpg"
-    },
-    {
-      "id": "8",
-      "titulo": "El nombre de la rosa",
-      "autor": "Umberto Eco",
-      "descripcion": "Un monje franciscano, William de Baskerville, investiga una serie de misteriosos asesinatos en una abadía medieval mientras explora temas de fe, conocimiento y poder.",
-      "imagen": "https://imagessl7.casadellibro.com/a/l/t0/07/9788426418807.jpg"
-    },
-    {
-      "id": "9",
-      "titulo": "La sombra del viento",
-      "autor": "Carlos Ruiz Zafón",
-      "descripcion": "En la Barcelona de la posguerra, un joven descubre un libro en el Cementerio de los Libros Olvidados y se enreda en un misterio literario que afecta su vida y la de quienes lo rodean.",
-      "imagen": "https://4.bp.blogspot.com/-c1ZZQK3r35g/Vzv_Qd91GJI/AAAAAAAAM_k/unbEDCELHboaH2nljwgK25AjuANq-KN1gCLcB/s1600/LA%2BSOMBRA%2BDEL%2BVIENTO.jpg"
-    },
-    {
-      "id": "10",
-      "titulo": "Los juegos del hambre",
-      "autor": "Suzanne Collins",
-      "descripcion": "En un futuro distópico, Katniss Everdeen lucha por sobrevivir en un brutal juego de televisión donde los tributos deben pelear hasta la muerte.",
-      "imagen": "https://www.agapea.com/RBA-Molino/LOS-JUEGOS-DEL-HAMBRE-SERIE-LOS-JUEGOS-DEL-HAMBRE-1-i6n6137118.jpg"
-    },
-    {
-      "id": "11",
-      "titulo": "El alquimista",
-      "autor": "Paulo Coelho",
-      "descripcion": "Santiago, un joven pastor andaluz, emprende un viaje para encontrar un tesoro escondido en Egipto y aprende lecciones profundas sobre la vida, el destino y los sueños.",
-      "imagen": "https://imagessl5.casadellibro.com/a/l/t0/55/9788408144755.jpg"
-    }
-  ]
+  {
+    "id": "1",
+    "titulo": "Harry Potter y la piedra filosofal",
+    "autor": "J.K. Rowling",
+    "descripcion": "Con las manos temblorosas, Harry le dio la vuelta al sobre y vio un sello de lacre púrpura con un escudo de armas: un león, un águila, un tejón y una serpiente, que rodeaban una gran letra H. Harry Potter nunca había oído nada sobre Hogwarts cuando las cartas comienzan a caer en el felpudo del número cuatro de Privet Drive. Escritas en tinta verde en un pergamino amarillento con un sello morado, sus horribles tíos las han confiscado velozmente. En su undécimo cumpleaños, un hombre gigante de ojos negros llamado Rubeus Hagrid aparece con una noticia extraordinaria: Harry Potter es un mago y tiene una plaza en el Colegio Hogwarts de Magia y Hechicería. ¡Una aventura increíble está a punto de empezar! Tema musical compuesto por James Hannigan.",
+    "imagen": "https://pendulo.com/imagenes_grandes/9788498/978849838948.GIF",
+    "cantidad": 7,
+    "precio": 18000
+  },
+  {
+    "id": "2",
+    "titulo": "El hobbit",
+    "autor": "J.R.R. Tolkien",
+    "descripcion": "Bilbo Bolsón, un hobbit que disfruta de una vida tranquila en su hogar, es sacado de su zona de confort por el mago Gandalf y un grupo de enanos para recuperar un tesoro robado por el dragón Smaug.",
+    "imagen": "https://imagessl6.casadellibro.com/a/l/t7/56/9788445000656.jpg",
+    "cantidad": 5,
+    "precio": 22000
+  },
+  {
+    "id": "3",
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "descripcion": "En una sociedad totalitaria y opresiva, el protagonista, Winston Smith, lucha contra el régimen del Partido, que controla todos los aspectos de la vida y manipula la verdad.",
+    "imagen": "https://m.media-amazon.com/images/I/61kjuGfZyML.jpg",
+    "cantidad": 9,
+    "precio": 15000
+  },
+  {
+    "id": "4",
+    "titulo": "Orgullo y prejuicio",
+    "autor": "Jane Austen",
+    "descripcion": "Elizabeth Bennet, una joven inteligente y enérgica, navega por las complejidades del amor, el matrimonio y la moralidad en la Inglaterra del siglo XIX.",
+    "imagen": "https://www.agapea.com/Alianza-Editorial/Orgullo-y-prejuicio-i6n17428974.jpg",
+    "cantidad": 6,
+    "precio": 12000
+  },
+  {
+    "id": "5",
+    "titulo": "Cien años de soledad",
+    "autor": "Gabriel García Márquez",
+    "descripcion": "La historia de la familia Buendía a lo largo de siete generaciones en el pueblo ficticio de Macondo, llena de realismo mágico y eventos extraordinarios.",
+    "imagen": "https://www.mejoreslibros.top/wp-content/uploads/2020/09/Cien-anos-de-Soledad-50-Aniversario-1141x1536.jpg",
+    "cantidad": 8,
+    "precio": 25000
+  },
+  {
+    "id": "6",
+    "titulo": "El gran Gatsby",
+    "autor": "F. Scott Fitzgerald",
+    "descripcion": "En la década de 1920, el misterioso millonario Jay Gatsby organiza lujosas fiestas en su mansión en Long Island mientras intenta recuperar el amor de su vida, Daisy Buchanan.",
+    "imagen": "https://2.bp.blogspot.com/-hinI02TQ1iM/Vrt7k8sth_I/AAAAAAAAFjs/h6OfPfKC_Rg/s1600/elgrangatsbyportada.jpg",
+    "cantidad": 4,
+    "precio": 20000
+  },
+  {
+    "id": "7",
+    "titulo": "Matar a un ruiseñor",
+    "autor": "Harper Lee",
+    "descripcion": "En los años 30, en el sur de los Estados Unidos, la joven Scout Finch observa y experimenta las injusticias raciales a través de los ojos de su padre, el abogado Atticus Finch, quien defiende a un hombre negro acusado injustamente.",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_992079-MLM47037519198_082021-F.jpg",
+    "cantidad": 3,
+    "precio": 17000
+  },
+  {
+    "id": "8",
+    "titulo": "El nombre de la rosa",
+    "autor": "Umberto Eco",
+    "descripcion": "Un monje franciscano, William de Baskerville, investiga una serie de misteriosos asesinatos en una abadía medieval mientras explora temas de fe, conocimiento y poder.",
+    "imagen": "https://imagessl7.casadellibro.com/a/l/t0/07/9788426418807.jpg",
+    "cantidad": 6,
+    "precio": 24000
+  },
+  {
+    "id": "9",
+    "titulo": "La sombra del viento",
+    "autor": "Carlos Ruiz Zafón",
+    "descripcion": "En la Barcelona de la posguerra, un joven descubre un libro en el Cementerio de los Libros Olvidados y se enreda en un misterio literario que afecta su vida y la de quienes lo rodean.",
+    "imagen": "https://4.bp.blogspot.com/-c1ZZQK3r35g/Vzv_Qd91GJI/AAAAAAAAM_k/unbEDCELHboaH2nljwgK25AjuANq-KN1gCLcB/s1600/LA%2BSOMBRA%2BDEL%2BVIENTO.jpg",
+    "cantidad": 10,
+    "precio": 28000
+  },
+  {
+    "id": "10",
+    "titulo": "Los juegos del hambre",
+    "autor": "Suzanne Collins",
+    "descripcion": "En un futuro distópico, Katniss Everdeen lucha por sobrevivir en un brutal juego de televisión donde los tributos deben pelear hasta la muerte.",
+    "imagen": "https://www.agapea.com/RBA-Molino/LOS-JUEGOS-DEL-HAMBRE-SERIE-LOS-JUEGOS-DEL-HAMBRE-1-i6n6137118.jpg",
+    "cantidad": 7,
+    "precio": 19000
+  },
+  {
+    "id": "11",
+    "titulo": "El alquimista",
+    "autor": "Paulo Coelho",
+    "descripcion": "Santiago, un joven pastor andaluz, emprende un viaje para encontrar un tesoro escondido en Egipto y aprende lecciones profundas sobre la vida, el destino y los sueños.",
+    "imagen": "https://imagessl5.casadellibro.com/a/l/t0/55/9788408144755.jpg",
+    "cantidad": 8,
+    "precio": 21000
+  }
+]

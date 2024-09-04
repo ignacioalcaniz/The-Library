@@ -4,6 +4,7 @@ import { SearchBar } from "./SearchBar";
 import { Api } from "../peticiones/Api";
 import { BookList } from "../BuscarLibros.jsx/BookList";
 import { Link } from "react-router-dom";
+import "./NavBar.css"
 
 
 
