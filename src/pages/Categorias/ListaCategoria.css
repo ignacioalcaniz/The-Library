@@ -1,0 +1,26 @@
+.card{
+    object-fit: contain;
+    border: 2px solid black;
+    height: 550px;
+    width: 400px;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: blue;
+}
+main{
+    gap: 30px;
+}
+.img-lista{
+    height: 300px;
+   
+   
+}
+.boton-lista{
+    object-fit: contain;
+    height: 50px;
+    width: 50px;
+    align-self: center;
+}
+p{
+    text-decoration: none;
+}

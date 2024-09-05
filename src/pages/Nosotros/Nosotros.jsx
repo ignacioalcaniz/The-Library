@@ -1,13 +1,13 @@
-import { Title } from "../../components/Title/Title"
-import { NavBar } from "../../components/NavBar/NavBar"
+
 
 export const Nosotros=()=>{
 
 
     return(
         <>
-        <Title/>
-        <NavBar/>
+        <main>
+            <h4 className="text-6xl text-center bg-primary m-2 rounded">Nosotros:</h4>
+        </main>
         
         </>
     )
