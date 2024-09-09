@@ -27,7 +27,7 @@ export const NavBar = () => {
         
             <SearchBar submit={buscarLibro} />
             <div>
-                <BookList books={img} />
+            <BookList books={img} />
             </div>
         </>
 

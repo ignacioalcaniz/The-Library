@@ -7,6 +7,8 @@ import { Carrito } from "./pages/Carrito/Carrito";
 import { Error } from "./pages/Error/Error";
 import { Layout } from "./pages/Layout/Layout";
 import { ListaCategoria } from "./pages/Categorias/ListaCategoria";
+import { CompPadre } from "./context/DatosContext";
+
 
 
 
@@ -30,7 +32,8 @@ function App() {
     return (
 
         <BrowserRouter>
-            <Routes>
+        <CompPadre>
+        <Routes>
                 <Route path="/TheLibrary" element={<Layout />}>
                     <Route index element={<Inicio />} />
                     <Route path="Categorias" element={<Categorias />} />
@@ -40,6 +43,8 @@ function App() {
                     <Route path="*" element={<Error />} />
                 </Route>
             </Routes>
+        </CompPadre>
+           
         </BrowserRouter>
 
 

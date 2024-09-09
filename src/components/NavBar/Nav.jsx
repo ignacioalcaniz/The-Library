@@ -1,9 +1,11 @@
 import "./Nav.css"
 import { Link } from "react-router-dom"
 import { CardWidget } from "./CardWidget"
+import { DatosContext } from "../../context/DatosContext"
+import { useContext } from "react"
 
 export const Nav = () => {
-
+const{contador}=useContext(DatosContext)
 
     return (
         <>
@@ -13,7 +15,7 @@ export const Nav = () => {
                     <li><Link to={"/TheLibrary"}>INICIO</Link></li>
                     <li><Link to={"/TheLibrary/Categorias"}>TODOS LOS LIBROS:</Link></li>
                     <li><Link to={"/TheLibrary/Nosotros"}>NOSOTROS:</Link></li>
-                    <li><Link to={"/TheLibrary/Carrito"}><CardWidget /></Link></li>
+                    <li><Link to={"/TheLibrary/Carrito"}><CardWidget /><p>{contador}</p></Link></li>
                 </ul>
 
             </nav>

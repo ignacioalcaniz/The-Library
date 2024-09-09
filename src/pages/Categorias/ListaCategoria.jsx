@@ -1,7 +1,9 @@
 import { categoriasLibros } from "../../components/arrayLibros";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./ListaCategoria.css";
+import {  DatosContext } from "../../context/DatosContext";
+
 
 export const ListaCategoria = () => {
   const { libroId } = useParams();
@@ -12,6 +14,7 @@ export const ListaCategoria = () => {
   const [cantidad, setCantidad] = useState(0); 
 
   const { nombre, autor, categoria, imagen, descripcion, precio, cantidad: stock } = resultadoFind;
+   const{contador,setContador}=useContext(DatosContext)
 
   
   const handleCantidadChange = (e) => {
@@ -21,6 +24,8 @@ export const ListaCategoria = () => {
 
   const handleComprar = () => {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    setContador(contador+1)
+  
 
     
     carrito.push({
@@ -38,8 +43,11 @@ export const ListaCategoria = () => {
     setShowInput(false);
   };
 
+
+
   return (
     <main>
+   
       <div className="card">
         <h5 className="text-center">{nombre}</h5>
         <h5 className="text-center">{autor}</h5>
@@ -50,10 +58,7 @@ export const ListaCategoria = () => {
         <p className="text-center">Cantidad disponible: {stock}</p>
         
         {!showInput ? (
-          <button
-            className="boton-lista"
-            onClick={() => setShowInput(true)}
-          >
+          <button className="boton-lista" onClick={() => setShowInput(true)}>
             <img src="https://i.ibb.co/rxP7CwT/carrito-de-compras-2.png" alt="" />
           </button>
         ) : (
@@ -68,6 +73,11 @@ export const ListaCategoria = () => {
           </div>
         )}
       </div>
+     
+     
+   
+      
+     
     </main>
   );
 };

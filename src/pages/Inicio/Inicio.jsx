@@ -3,19 +3,6 @@ import { NavBar } from "../../components/NavBar/NavBar"
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const Inicio=()=>{
     
 
@@ -24,8 +11,11 @@ export const Inicio=()=>{
           <NavBar/>
      
       <main>
-      <h2 className="text-6xl text-center bg-primary m-2 rounded">Libros Populares:</h2>
+        
+        <h2 className="text-6xl text-center bg-primary m-2 rounded">Libros Populares:</h2>
         <LibrosPopulares/>
+      
+      
         
       
       </main>
