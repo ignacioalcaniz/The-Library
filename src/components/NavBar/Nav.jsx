@@ -13,9 +13,10 @@ const{contador}=useContext(DatosContext)
 
                 <ul className="	flex justify-between m-6 text-2xl p-auto align-items-center  ">
                     <li><Link to={"/TheLibrary"}>INICIO</Link></li>
-                    <li><Link to={"/TheLibrary/Categorias"}>TODOS LOS LIBROS:</Link></li>
+                    <li><Link to={"/TheLibrary/Categorias"}>OTROS LIBROS:</Link></li>
+                    <li><Link to={"/TheLibrary/Ofertas"}>OFERTAS:</Link></li>
                     <li><Link to={"/TheLibrary/Nosotros"}>NOSOTROS:</Link></li>
-                    <li><Link to={"/TheLibrary/Carrito"}><CardWidget /><p>{contador}</p></Link></li>
+                    <li><Link to={"/TheLibrary/Carrito"}><CardWidget /><p className="text-center">{contador}</p></Link></li>
                 </ul>
 
             </nav>

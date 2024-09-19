@@ -1,0 +1,29 @@
+.carta-libroId{
+    width: 400px;
+    height: 500px;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: blue;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.div-carta{
+    display: flex;
+    justify-content: center;
+   
+   
+}
+.img-carta{
+   
+    height: 300px;
+}
+.boton-id{
+    object-fit: contain;
+    height: 50px;
+    width: 50px;
+    align-self: center;
+  
+}
+.img-id{
+    margin: auto;
+}

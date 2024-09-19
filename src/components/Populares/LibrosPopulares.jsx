@@ -1,28 +1,39 @@
-import { ApiLocal } from "../peticiones/ApiLocal"
+import { useEffect, useState } from 'react';
+import { Loader } from '../Loader/Loader';
 import { LibrosList } from "./LibrosList";
-import { useState } from "react";
+import { collection,getDocs,getFirestore } from 'firebase/firestore';
 
 
-export const LibrosPopulares=()=>{
+export const LibrosPopulares = () => {
+  const [libros, setLibros] = useState([]);
+  const[loader,setLoader]=useState(true)
 
-    const[libro,setLibro]=useState([])
 
-    const LibrosLocales= async ()=>{
-        const response=await ApiLocal();
-        setLibro(response)
-        
+  
+  useEffect(()=>{
+    const fetchData=async()=>{
+      const db=getFirestore();
+      const items=collection(db,"products")
+      const productsSnapshot=await  getDocs(items)
+      const productsData = productsSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+
+      
+
+
+    
+      setLibros(productsData);
+      setLoader(false);
+    
     }
-    LibrosLocales();
+    fetchData();
+  
+  },[])
 
-
-    return(
-        <>
-        <div>
-            <LibrosList LibrosLocales={libro}/>
-        </div>
-
-
-
-        </>
-    )
-}
+  return (
+    <div>
+      {loader? <Loader />:<LibrosList LibrosLocales={libros} />}
+      
+      
+    </div>
+  );
+};

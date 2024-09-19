@@ -1,6 +1,13 @@
 .carta{
-    border: 2px solid black;
+    border: 4px solid black;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: blue;
+ 
+   
+    
    
 }
 h3{
@@ -15,4 +22,15 @@ img{
 }
 p{
     text-decoration: underline;
+}
+.botonInfo{
+   border: 2px solid black;
+   width: 50%;
+   align-self: center;
+   margin: 5px;
+   border-radius: 5px;
+   background-color: white;
+  
+
+  
 }
