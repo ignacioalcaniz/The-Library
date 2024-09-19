@@ -1,3 +1,10 @@
 .card{
     z-index: 0;
 }
+.boton-ofertas{
+   margin: auto;
+}
+.img-ofertas{
+    height: 40px;
+    width: 40px;
+}

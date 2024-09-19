@@ -18,12 +18,10 @@
     height: 300px;
 }
 .boton-id{
-    object-fit: contain;
-    height: 50px;
-    width: 50px;
-    align-self: center;
+    margin: auto;
   
 }
 .img-id{
-    margin: auto;
+    height: 60px;
+    width: 60px;
 }

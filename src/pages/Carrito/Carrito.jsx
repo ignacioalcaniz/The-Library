@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { DatosContext } from "../../context/DatosContext";
+import "./Carrito.css"
 
 
 export const Carrito=()=>{
 
-    const { carrito } = useContext(DatosContext);
+    const { carrito,eliminar } = useContext(DatosContext);
+  
 
     return(
         <>
@@ -13,20 +15,28 @@ export const Carrito=()=>{
            
 
 
-  <div className="row">
-    <h2>Carrito:</h2>
+  <div className=" contenedor ">
     {carrito.length === 0 ? (
       <p>No hay elementos en el carrito.</p>
     ) : (
-      <ul>
+      <ul className="row">
         {carrito.map((item) => (
-          <li key={item.id}>
+          <li className="producto" key={item.id}>
             {item.nombre} - Cantidad: {item.cantidad}
+            <p>Precio:${item.precio}</p>
             <img src={item.img} alt={item.nombre} />
+            <p>{item.descripcion}</p>
+            <button onClick={()=>eliminar(item.id)}>Eliminar</button>
+            <button>Editar</button>
           </li>
         ))}
       </ul>
     )}
+    {
+    carrito.length >0 && 
+    <button>crear orden</button>
+    }
+    
   </div>
 
 

@@ -25,18 +25,20 @@ export const Categorias = () => {
     }, []);
 
     return (
-        <main>
+        <main >
             <h4 className="text-6xl text-center bg-primary m-2 rounded">OTROS LIBROS:</h4>
             {loading ? (
                 <Loader />
             ) : (
                 <div className="contenedorLibros">
                     {libros.map((libro) => (
-                        <div key={libro.id} className="libro-item">
+                        <div key={libro.id} className="card">
                             <h1 className='text-center'>{libro.name}</h1>
+                            <h2 className='text-center'>{libro.autor}</h2>
                             <img className='img-carta' src={libro.img} alt="cover-img" />
+                            <p className="text-center">${libro.precio}</p>
                             <button className="boton-info">
-                                <Link to={`/TheLibrary/Categorias/${libro.id}`}>DETALLES:</Link>
+                                <Link to={`/TheLibrary/OtroLibros/${libro.id}`}>DETALLES:</Link>
                             </button>
                         </div>
                     ))}

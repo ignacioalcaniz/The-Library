@@ -35,6 +35,7 @@ export const Ofertas=()=>{
                         <p className="text-center">Descripción:</p>
                         <p className="text-center bg-light">{libro.descripcion}</p>
                         <p className="text-center">Cantidad disponible: {libro.stock}</p>
+                        <button className=" boton-ofertas" > <img className="img-ofertas" src="https://i.ibb.co/rxP7CwT/carrito-de-compras-2.png" alt="Agregar al carrito" /></button>
                     </div>
                 ))
             ) : (

@@ -1,5 +1,5 @@
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
 import { Inicio } from "./pages/Inicio/Inicio";
 import { Categorias } from "./pages/TodosLosLibros/Categorias";
 import { Nosotros } from "./pages/Nosotros/Nosotros";
@@ -33,19 +33,20 @@ function App() {
 
     return (
 
-        <BrowserRouter>
+        <BrowserRouter >
             <CompPadre>
                 <Routes>
                     <Route path="/TheLibrary" element={<Layout />}>
                         <Route index element={<Inicio />} />
-                        <Route path="Categorias" element={<Categorias />} />
+                        <Route path="OtroLibros" element={<Categorias />} />
                         <Route path="Ofertas" element={<Ofertas/>}/>
                         <Route path="Nosotros" element={<Nosotros />} />
                         <Route path="Carrito" element={<Carrito />} />
-                        <Route path="Categorias/:id" element={<ListaCategoria />} />
+                        <Route path="OtroLibros/:id" element={<ListaCategoria />} />
                         <Route path="/TheLibrary/:popularId" element={<LibroId />} />
                         <Route path="*" element={<Error />} />
                     </Route>
+                    <Route path="/" element={<Navigate to="/TheLibrary" />} />
                 </Routes>
             </CompPadre>
 

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { collection,getDocs,getFirestore } from 'firebase/firestore';
 import "./LibroId.css"
 import { Loader } from '../Loader/Loader';
+import { LibroIdDetail } from './LibroIdDetail';
 
 export const LibroId = () => {
   const { popularId } = useParams();
@@ -15,7 +16,7 @@ export const LibroId = () => {
       getDocs(items)
       .then((snapshot)=>{
         const foundLibro = snapshot.docs.find(libro => libro.id == popularId);
-        setLibros(foundLibro.data());
+        setLibros(foundLibro ? { id: foundLibro.id, ...foundLibro.data() } : null);
       })
       
    
@@ -27,15 +28,7 @@ export const LibroId = () => {
     <main>
             <div className='div-carta'>
       {libro ? (
-        <div className='carta-libroId'>
-          <h1 className='text-center'>{libro.name}</h1>
-          <img className='img-carta' src={libro.img} alt="" />
-          <p className='text-center'>{libro.descripcion}</p>
-          <p className='text-center' >${libro.precio}</p>
-          <p  className='text-center'>Cantidad:{libro.stock}</p>
-          <button className="boton-id "> <img className='img-id' src="https://i.ibb.co/rxP7CwT/carrito-de-compras-2.png" alt="" /></button>
-         
-        </div>
+       <LibroIdDetail name={libro.name} img={libro.img} descripcion={libro.descripcion} precio={libro.precio} stock={libro.stock}/>
       ) : (
         <Loader/>
       )}

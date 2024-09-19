@@ -14,22 +14,36 @@ export const CompPadre=({children})=>{
         setCantidad(e.target.value);
       };
 
-    const comprar = ({ id, nombre, cantidad, img }) => {
+    const comprar = ({ id, nombre, cantidad, img,descripcion,precio }) => {
        
         if (cantidad > 0) { 
             setCarrito((prevCarrito) => [
                 ...prevCarrito,
-                { id, nombre, cantidad, img }
+                { id, nombre, cantidad, img,descripcion,precio }
             ]);
         }
     };
-  
+    const eliminar = (id) => {
+    
+        setCarrito((prevCarrito) => {
+            const nuevoCarrito = prevCarrito.filter(item => item.id !== id);
+            return nuevoCarrito;
+            
+        });
+        setContador(contador-1)
+    };
+  const editar=()=>{
+
+  }
+  const finalizarCompra=()=>{
+
+  }
 
 
 
 
     return(
-       <DatosContext.Provider value={{ contador, setContador, carrito, comprar, showInput, setShowInput,cantidad, handleCantidadChange}}>
+       <DatosContext.Provider value={{ contador, setContador, carrito, comprar, showInput, setShowInput,cantidad, handleCantidadChange,eliminar}}>
         {children}
        </DatosContext.Provider>
     )
