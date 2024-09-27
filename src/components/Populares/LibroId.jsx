@@ -37,7 +37,7 @@ export const LibroId = () => {
     <main>
             <div className='div-carta'>
       {libro ? (
-       <LibroIdDetail onAdd={onAdd} name={libro.name} autor={libro.autor} img={libro.img} descripcion={libro.descripcion} precio={libro.precio} stock={libro.stock} categoria={libro.categoria}/>
+       <LibroIdDetail max={libro.stock} onAdd={onAdd} name={libro.name} autor={libro.autor} img={libro.img} descripcion={libro.descripcion} precio={libro.precio} stock={libro.stock} categoria={libro.categoria}/>
       ) : (
         <Loader/>
       )}

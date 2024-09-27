@@ -1,6 +1,6 @@
 import { Counter } from "../CounterCarrito/Counter"
 
-export const LibroIdDetail=({name,img,descripcion,precio,stock,categoria,autor,onAdd})=>{
+export const LibroIdDetail=({name,img,descripcion,precio,stock,categoria,autor,onAdd,max})=>{
 
 
 
@@ -9,7 +9,7 @@ export const LibroIdDetail=({name,img,descripcion,precio,stock,categoria,autor,o
           <main className="row">
         <div className="col-6 div-boton">
         <img  className="img-lista" src={img} alt={name} />
-        <Counter onAdd={onAdd} />
+        <Counter onAdd={onAdd} max={max} />
         </div>
         <div className="col-5 div-info" >
         <h5 className="text-center">Titulo:{name}</h5>

@@ -85,9 +85,6 @@ export const CompPadre = ({ children }) => {
             });
             }
           });
-
-       
-        
     };
 
 
@@ -116,14 +113,12 @@ export const CompPadre = ({ children }) => {
         setFinalPrice(finalPrice);
         return finalPrice
     };
-
     useEffect(() => {
         total();
     }, [carrito]);
 
     
     const finalizarCompra = () => {
-      
         navigate('/TheLibrary/Carrito/mediosDePago');
     }
 
