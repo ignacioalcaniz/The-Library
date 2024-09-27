@@ -88,7 +88,7 @@ export const MediosDePago = () => {
     return (
         <>
             <main >
-                <h4 className="text-6xl text-center bg-primary m-2 rounded">Finalizar compra:</h4>
+                <h4 className="text-6xl text-center h4-titulos m-2 rounded">Finalizar compra:</h4>
 
 
                 <div className="d-flex flex-row row m-auto">

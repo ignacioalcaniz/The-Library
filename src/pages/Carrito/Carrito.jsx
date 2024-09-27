@@ -26,7 +26,7 @@ export const Carrito = () => {
     fieldsToValidate.forEach(field => {
       if (!buyer[field]) {
         setShowform(true);
-        localError[field] = `el ${field} es obligatorio`;
+        localError[field] = `El campo: ${field} es obligatorio`;
       }
     });
 

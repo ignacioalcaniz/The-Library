@@ -60,12 +60,33 @@ export const CompPadre = ({ children }) => {
    
 
     const eliminar = (id) => {
+        Swal.fire({
+            title: "Seguro que quieres eliminar este producto?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Si, eliminar",
+            background:"blue",
+            color:"white"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Eliminado",
+                text: "Tu producto fue eliminado",
+                icon: "success",
+                background:"blue",
+                color:"white",
+              });
+              setCarrito((prevCarrito) => {
+                const nuevoCarrito = prevCarrito.filter(item => item.id !== id);
+                return nuevoCarrito;
+    
+            });
+            }
+          });
 
-        setCarrito((prevCarrito) => {
-            const nuevoCarrito = prevCarrito.filter(item => item.id !== id);
-            return nuevoCarrito;
-
-        });
+       
         
     };
 

@@ -1,42 +1,42 @@
 import { useState } from "react";
 import { SearchBar } from "./SearchBar";
-import { Api } from "../peticiones/Api";
-import { BookList } from "../BuscarLibros.jsx/BookList";
-import { Loader } from "../Loader/Loader";
-
-
-
-
-
-
+import { BookList } from "../BuscarLibros.jsx/BookList"; 
+import { getFirestore, collection,  getDocs } from "firebase/firestore";
 
 
 export const NavBar = () => {
+    const [books, setBooks] = useState([]);
 
-    const [img, setImg] = useState([])
-
-    const buscarLibro = async (libro) => {
-        try{
-            const respuesta = await Api(libro)
-        setImg(respuesta)
-        }
-        catch{
-            <Loader/>
-        }
-
-    }
-
-
+    const fetchData = async (name) => {
+        const db = getFirestore();
+        const productosCollection = collection(db, "products");
+        const librosCollection = collection(db, "libros");
+        const productosSnapshot = await getDocs(productosCollection);
+        const productosData = productosSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        const librosSnapshot = await getDocs(librosCollection);
+        const librosData = librosSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        const filteredProducts = productosData.filter(product => product.name === name);
+        const filteredLibros = librosData.filter(libro => libro.name === name);
+        const combinedData = [...filteredProducts, ...filteredLibros];
+        setBooks(combinedData);
+    };
+    
 
     return (
-        <>
-        
-            <SearchBar submit={buscarLibro} />
-            <div>
-            <BookList books={img} />
-            </div>
-        </>
+        <div>
+            <SearchBar submit={fetchData} />
+            <BookList books={books} />
+        </div>
+    );
+};
 
-    )
 
-}
+
+
+
+
+
+
+
+
+

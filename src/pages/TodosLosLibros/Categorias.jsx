@@ -25,12 +25,12 @@ export const Categorias = () => {
     }, []);
 
     return (
-        <main >
+        <main className="m-5" >
             <h4 className="text-6xl text-center h4-titulos m-2 rounded">OTROS LIBROS:</h4>
             {loading ? (
                 <Loader />
             ) : (
-                <div className="contenedorLibros">
+                <div className="contenedorLibros gap-5">
                     {libros.map((libro) => (
     <div key={libro.id} className="carta">
     <h3 className='text-center'>{libro.name}</h3>

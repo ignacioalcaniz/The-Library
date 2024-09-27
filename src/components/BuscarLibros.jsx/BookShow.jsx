@@ -1,21 +1,20 @@
-import "./BookShow.css"
+import "./BookShow.css";
+
+
+export const BookShow = ({ id,precio,image, title, descripcion,autor,info }) => {
 
 
 
-
-
-export const BookShow=({image,title,descripcion})=>{
-
-
-
-    return(
-        <>
-        <div className="book-contenedor ">
-          <h3>{title.volumeInfo.title}</h3>
-          <img src={image.volumeInfo.imageLinks.smallThumbnail} alt="bookImage" />
-          <p>{descripcion.volumeInfo.description}</p>
-        </div>
-        
-        </>
-    )
-}
+    return (
+      <div key={id.id} className="card">
+      <h3 className='text-center'>{title.name}</h3>
+      <h4 className='text-center'>Autor:{autor.autor}</h4>
+      <img className='img-buscar' src={image.img} alt="cover-img" />
+      <p className="text-center">${precio.precio}</p>
+      <p className="text-center bg-white">{descripcion.descripcion}</p>
+      <button className="boton-info">
+      {info}
+      </button>
+  </div>
+    );
+};

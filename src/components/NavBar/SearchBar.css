@@ -12,14 +12,25 @@ input{
     width: 50%;
     border-radius: 5px;
     border: 2px solid black;
-    height: 80%;
+    height: 40px;
     background-color: blue;
+    color: black;
    
    
+}
+input:hover{
+box-shadow: 5px 5px 5px black;
 }
 button{
     height: 70px;
 }
-img{
-    height: 10%;
+
+.img-busqueda:active{
+    background-color: black;
+    border-radius: 5px;
+    border: 2px solid blue;
+}
+.img-busqueda:hover{
+  
+    box-shadow: 5px 5px 5px black;
 }

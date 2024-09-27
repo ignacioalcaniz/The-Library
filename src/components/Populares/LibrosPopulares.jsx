@@ -30,7 +30,7 @@ export const LibrosPopulares = () => {
   },[])
 
   return (
-    <div>
+    <div >
       {loader? <Loader />:<LibrosList LibrosLocales={libros} />}
       
       
