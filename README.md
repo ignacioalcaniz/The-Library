@@ -13,7 +13,7 @@ The Library es una aplicación de comercio electrónico para comprar libros. Per
 - Interfaz amigable y responsiva.
 - Integración con Firebase para gestionar datos y autenticación.
 - Soporte para notificaciones usando SweetAlert2.
-- La pagina esta deployada en netlify:
+- La pagina esta deployada en netlify:https://thelibraryyy.netlify.app
 - en mi datos context estan las principales funciones bien separadas y tambien los principales estados que son ultilizados por toda la pagina.
 - la pagina funciona perfectamente permitiendote agregar todos los productos que quieras de acuerdo a su respectivo stock y sumando el precio al total.
 
