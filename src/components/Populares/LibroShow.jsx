@@ -16,7 +16,7 @@ export const LibroShow=({titulo,autor,imagen,info,precio})=>{
             
 
         </div>
-        
+    
         
         </>
     )

@@ -5,7 +5,7 @@ import { DatosContext } from "../../context/DatosContext"
 import { useContext } from "react"
 
 export const Nav = () => {
-const{contador}=useContext(DatosContext)
+const{carrito}=useContext(DatosContext)
 
     return (
         <>
@@ -15,10 +15,9 @@ const{contador}=useContext(DatosContext)
                     <li><Link to={"/TheLibrary"}>INICIO</Link></li>
                     <li><Link to={"/TheLibrary/OtroLibros"}>OTROS LIBROS:</Link></li>
                     <li><Link to={"/TheLibrary/Ofertas"}>OFERTAS:</Link></li>
-                    <li><Link to={"/TheLibrary/Nosotros"}>NOSOTROS:</Link></li>
-                    <li><Link to={"/TheLibrary/Carrito"}><CardWidget /><p className="text-center">{contador}</p></Link></li>
+                    <li><Link to={"/TheLibrary/Carrito"}><CardWidget /><p className="text-center">{carrito.length}</p></Link></li>
                 </ul>
-
+               
             </nav>
         </>
     )

@@ -5,11 +5,15 @@
     flex-direction: column;
     justify-content: center;
     background-color: blue;
- 
+
    
     
    
 }
+.carta:hover{
+    box-shadow: 5px 5px 5px black;
+}
+
 h3{
     background-color: blue;
 }
@@ -30,4 +34,7 @@ p{
    margin: 5px;
    border-radius: 5px;
    background-color: white;
+}
+.botonInfo:hover{
+    box-shadow: 5px 5px 5px black;
 }

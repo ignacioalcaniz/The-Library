@@ -1,10 +1,17 @@
 .card{
     z-index: 0;
 }
+.card:hover{
+    box-shadow: 5px 5px 5px black;
+}
+
 .boton-ofertas{
    margin: auto;
 }
 .img-ofertas{
     height: 40px;
     width: 40px;
+}
+.boton-info:hover{
+    box-shadow: 5px 5px 5px black;
 }

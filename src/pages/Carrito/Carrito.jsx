@@ -1,49 +1,122 @@
 import { useContext } from "react";
 import { DatosContext } from "../../context/DatosContext";
 import "./Carrito.css"
+import { Formulario } from "./Formulario";
 
 
-export const Carrito=()=>{
 
-    const { carrito,eliminar } = useContext(DatosContext);
-  
+export const Carrito = () => {
 
-    return(
-        <>
-         <main>
-            <h4 className="text-6xl text-center bg-primary m-2 rounded">Carrito:</h4>
-           
+  const { error, setError, buyer, setBuyer, showform, setShowform, finalizarCompra, finalPrice, carrito, eliminar, showinput, editar, handleInputChange, editingProductId, setShowInput } = useContext(DatosContext);
 
 
-  <div className=" contenedor ">
-    {carrito.length === 0 ? (
-      <p>No hay elementos en el carrito.</p>
-    ) : (
-      <ul className="row">
-        {carrito.map((item) => (
-          <li className="producto" key={item.id}>
-            {item.nombre} - Cantidad: {item.cantidad}
-            <p>Precio:${item.precio}</p>
-            <img src={item.img} alt={item.nombre} />
-            <p>{item.descripcion}</p>
-            <button onClick={()=>eliminar(item.id)}>Eliminar</button>
-            <button>Editar</button>
-          </li>
-        ))}
-      </ul>
-    )}
-    {
-    carrito.length >0 && 
-    <button>crear orden</button>
+  const handleChange = (e) => {
+    setBuyer({
+      ...buyer,
+      [e.target.name]: e.target.value
+    })
+  }
+
+
+  const submit = (e) => {
+    e.preventDefault();
+    const localError = {};
+    const fieldsToValidate = ['nombre', 'direccion', 'email'];
+
+    fieldsToValidate.forEach(field => {
+      if (!buyer[field]) {
+        setShowform(true);
+        localError[field] = `el ${field} es obligatorio`;
+      }
+    });
+
+    if (Object.keys(localError).length === 0) {
+      setShowform(false);
+
+    } else {
+      setError(localError);
     }
-    
-  </div>
+  };
 
 
 
-        </main>
-      
-        
-        </>
-    )
+
+  return (
+    <>
+      <main>
+        <h4 className="text-6xl text-center h4-titulos m-2 rounded">Carrito:</h4>
+       
+          {carrito.length > 0 && showform &&
+           <div className="div-form">
+            <Formulario title={"Complete el formulario de perfil:"} handleChange={handleChange} submit={submit} formData={buyer} error={error} />
+          <div className="div-crear-perfil ">
+            <button className="boton-crear-perfil" type="submit" onClick={submit}>ACEPTAR</button>
+          </div>
+        </div>}
+
+
+
+
+        <div className=" contenedor-carrito ">
+          {carrito.length === 0 ? (
+            <p>No hay elementos en el carrito.</p>
+          ) : (
+            <ul >
+              <p className="text-center parrafo-central">Productos agregados al carrito:</p>
+              {carrito.map((item) => (
+                <li className="producto row" key={item.id}>
+                  <div className="col-6 div-boton m-2">
+                    <img className="img-cart" src={item.img} alt={item.nombre} />
+                  </div>
+                  <div className="col-4 div-info">
+                    <p>Nombre: {item.name} </p>
+                    <p> Cantidad: {item.cantidad}</p>
+                    <p>Precio por unidad:${item.precio}</p>
+                    <p>Descripcion:{item.descripcion}</p>
+                    <div className="div-eliminar">
+                      <button className="m-2 boton-eliminar" onClick={() => eliminar(item.id)}>Eliminar Producto</button>
+                      <div>
+                        <button onClick={() => { editar(item.id) }} className="m-2 boton-editar">Editar Cantidad </button>
+                        {showinput && editingProductId === item.id && (
+                          <div>
+                            <input
+                              type="number"
+                              value={item.cantidad}
+                              onChange={(e) => handleInputChange(e, item.id)}
+                            />
+                            <button className="boton-aceptar" onClick={() => {
+                              if (item.cantidad === 0) {
+                                eliminar(item.id);
+                              }
+                              setShowInput(false);
+                            }}>ACEPTAR</button>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div className="d-flex justify-content-center">
+          {
+            carrito.length > 0 &&
+            <div className="w-25 d-flex flex-column m-2 ">
+              <p className=" p-total text-center"> TOTAL A PAGAR:${finalPrice}</p>
+              {!showform && <button onClick={finalizarCompra} className="boton-orden w-25 m-auto  ">PAGAR</button>}
+
+
+            </div>
+
+          }
+        </div>
+
+
+
+      </main>
+
+    </>
+  )
 }

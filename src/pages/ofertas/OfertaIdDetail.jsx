@@ -1,15 +1,14 @@
-import { Counter } from "../CounterCarrito/Counter"
+import { Counter } from "../../components/CounterCarrito/Counter"
 
-export const LibroIdDetail=({name,img,descripcion,precio,stock,categoria,autor,onAdd})=>{
-
+export const OfertasIdDetail=({name,autor,categoria,img,precio,descripcion,stock,onAdd,max})=>{
 
 
     return(
         <>
-          <main className="row">
+        <main className="row">
         <div className="col-6 div-boton">
         <img  className="img-lista" src={img} alt={name} />
-        <Counter onAdd={onAdd} />
+        <Counter onAdd={onAdd} max={max} />
         </div>
         <div className="col-5 div-info" >
         <h5 className="text-center">Titulo:{name}</h5>
@@ -21,8 +20,9 @@ export const LibroIdDetail=({name,img,descripcion,precio,stock,categoria,autor,o
           <p className="text-center">Cantidad disponible: {stock}</p>
         </div>
         
-          
+        
         </main>
+       
         </>
     )
 }

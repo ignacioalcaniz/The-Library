@@ -21,7 +21,7 @@ const change=(event)=>{
        
             <div className="BarraNavegacion" >
                 <input value={libro}  onChange={change} type="text" />
-                <button onClick={Buscar} ><img src="./img/buscar.png" alt="" /></button>
+                <button className="ml-1" onClick={Buscar} ><img src="https://i.ibb.co/VL8WVft/lupa-1.png" alt="" /></button>
             </div>
 
 

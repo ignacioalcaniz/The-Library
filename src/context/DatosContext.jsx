@@ -1,53 +1,136 @@
-import { createContext,useState } from "react"
+import { createContext, useState,useEffect } from "react"
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
-export const DatosContext=createContext();
+export const DatosContext = createContext();
 
 
 
-export const CompPadre=({children})=>{
-    const[contador,setContador]=useState(0)
-    const[carrito,setCarrito]=useState([])
-    const [showInput, setShowInput] = useState(false);
-    const [cantidad, setCantidad] = useState(1);
+export const CompPadre = ({ children }) => {
+   
+    const [carrito, setCarrito] = useState([])
+    const [showinput, setShowInput] = useState(false);
+    const [editingProductId, setEditingProductId] = useState(null);
+    const[finalPrice,setFinalPrice]=useState(0)
+    const navigate = useNavigate();
+    const finish=useNavigate()
+    const[showform,setShowform]=useState(true)
+    const[buyer,setBuyer]=useState({
+        nombre:"",
+        apellido:"",
+        telefono:"",
+        direccion:"",
+        email:""
+    })
 
-    const handleCantidadChange = (e) => {
-        setCantidad(e.target.value);
-      };
+    const[error,setError]=useState({
+        nombre:"",
+        apellido:"",
+        telefono:"",
+        direccion:"",
+        email:""
+    })
+  
+  
 
-    const comprar = ({ id, nombre, cantidad, img,descripcion,precio }) => {
-       
-        if (cantidad > 0) { 
-            setCarrito((prevCarrito) => [
-                ...prevCarrito,
-                { id, nombre, cantidad, img,descripcion,precio }
-            ]);
+
+
+
+
+    const comprar = ({ id, name, img, descripcion, precio }, q) => {
+        if (q > 0) {
+            setCarrito((prevCarrito) => {
+                const existingItemIndex = prevCarrito.findIndex(item => item.id === id);
+                if (existingItemIndex >= 0) {
+                    const updatedCart = [...prevCarrito];
+                    updatedCart[existingItemIndex].cantidad += q;
+
+                    return updatedCart;
+                } else {
+
+                    return [
+                        ...prevCarrito,
+                        { id, name, img, descripcion, precio, cantidad: q },
+                    ];
+                }
+            });
         }
+       
     };
+   
+
     const eliminar = (id) => {
-    
+
         setCarrito((prevCarrito) => {
             const nuevoCarrito = prevCarrito.filter(item => item.id !== id);
             return nuevoCarrito;
-            
+
         });
-        setContador(contador-1)
+        
     };
-  const editar=()=>{
-
-  }
-  const finalizarCompra=()=>{
-
-  }
 
 
 
+    const editar = (id) => {
+        setEditingProductId(id)
+        setShowInput(true)
+    }
 
-    return(
-       <DatosContext.Provider value={{ contador, setContador, carrito, comprar, showInput, setShowInput,cantidad, handleCantidadChange,eliminar}}>
-        {children}
-       </DatosContext.Provider>
+
+    const handleInputChange = (event, id) => {
+        const newQuantity = Number(event.target.value);
+        setCarrito((prevCarrito) => {
+            return prevCarrito.map(item =>
+                item.id === id ? { ...item, cantidad: newQuantity } : item
+            );
+        });
+       
+    };
+
+    const total = () => {
+        const finalPrice = carrito.reduce((acc, item) => {
+            return acc + (item.precio * item.cantidad);
+        }, 0);
+        
+        setFinalPrice(finalPrice);
+        return finalPrice
+    };
+
+    useEffect(() => {
+        total();
+    }, [carrito]);
+
+    
+    const finalizarCompra = () => {
+      
+        navigate('/TheLibrary/Carrito/mediosDePago');
+    }
+
+    const clearCarrito=()=>{
+        setCarrito([])
+        finish("/TheLibrary")
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Su pedido ha sido completado con exito!",
+            showConfirmButton: false,
+            timer: 2000,
+            background:"blue",
+            color:"white",
+          });
+
+    }
+
+
+
+
+    return (
+        <DatosContext.Provider value={{ error,setError,buyer,setBuyer,showform,setShowform,clearCarrito,total,finalizarCompra,finalPrice, carrito, comprar, eliminar, editar, handleInputChange, setShowInput,showinput, editingProductId }}>
+            {children}
+        </DatosContext.Provider>
     )
 }
+
 
 
 

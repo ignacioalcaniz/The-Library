@@ -4,10 +4,19 @@ import { collection,getDocs,getFirestore } from 'firebase/firestore';
 import "./LibroId.css"
 import { Loader } from '../Loader/Loader';
 import { LibroIdDetail } from './LibroIdDetail';
+import { DatosContext } from "../../context/DatosContext"
+import { useContext } from "react"
+
 
 export const LibroId = () => {
   const { popularId } = useParams();
-  const [libro, setLibros] = useState(null);
+  const [libro, setLibros] = useState([]);
+  const { comprar } = useContext(DatosContext);
+  const onAdd=(q)=>{
+   if(libro && libro.stock >= q){
+    comprar(libro,q)
+   }
+  }
 
   useEffect(() => {
    
@@ -28,7 +37,7 @@ export const LibroId = () => {
     <main>
             <div className='div-carta'>
       {libro ? (
-       <LibroIdDetail name={libro.name} img={libro.img} descripcion={libro.descripcion} precio={libro.precio} stock={libro.stock}/>
+       <LibroIdDetail onAdd={onAdd} name={libro.name} autor={libro.autor} img={libro.img} descripcion={libro.descripcion} precio={libro.precio} stock={libro.stock} categoria={libro.categoria}/>
       ) : (
         <Loader/>
       )}

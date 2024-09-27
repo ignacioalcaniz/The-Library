@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-
+import "./Error.css"
 
 
 export const Error=()=>{
@@ -9,9 +9,12 @@ export const Error=()=>{
 
 
         <>
-        <h3>404 Not Found</h3>
+        <div className="div-error">
+        <h3 className="rounded-2">404 Not Found</h3>
         <p>Pagina no encontrada</p>
-        <button><Link to={"/TheLibrary"}>Volver</Link></button>
+        <button className="boton-volver-error"><Link to={"/TheLibrary"}>Volver</Link></button>
+        </div>
+        
         </>
     )
 }

@@ -12,7 +12,7 @@ export const Inicio=()=>{
      
       <main className="m-5">
         
-        <h2 className="text-6xl text-center bg-primary m-2 rounded">Libros Populares:</h2>
+        <h2 className="text-6xl text-center h4-titulos m-2 rounded">Libros Populares:</h2>
         <LibrosPopulares/>
       
       
