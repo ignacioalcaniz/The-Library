@@ -24,7 +24,7 @@ export const LibroId = () => {
       const items=collection(db,"products")
       getDocs(items)
       .then((snapshot)=>{
-        const foundLibro = snapshot.docs.find(libro => libro.id == popularId);
+        const foundLibro = snapshot.docs.find(libro => libro.id === popularId);
         setLibros(foundLibro ? { id: foundLibro.id, ...foundLibro.data() } : null);
       })
       

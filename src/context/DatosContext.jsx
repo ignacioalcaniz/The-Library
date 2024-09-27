@@ -1,4 +1,4 @@
-import { createContext, useState,useEffect } from "react"
+import { createContext, useState,useEffect, useCallback } from "react"
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -105,17 +105,18 @@ export const CompPadre = ({ children }) => {
        
     };
 
-    const total = () => {
+    const total = useCallback(() => {
         const finalPrice = carrito.reduce((acc, item) => {
             return acc + (item.precio * item.cantidad);
         }, 0);
         
         setFinalPrice(finalPrice);
-        return finalPrice
-    };
+        return finalPrice;
+    }, [carrito]); 
+    
     useEffect(() => {
-        total();
-    }, [carrito]);
+        total(); 
+    }, [total]); 
 
     
     const finalizarCompra = () => {

@@ -21,7 +21,7 @@ const firebaseConfig = {
 const divPrincipal=document.getElementById("root")
 
 const root=ReactDOM.createRoot(divPrincipal)
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 
 
