@@ -35,11 +35,20 @@ border-radius:10px;
 background-color: red;
 width: 40%;
 }
+.boton-eliminar:hover{
+    box-shadow: 5px 5px 5px black;
+}
+.boton-aceptar:hover{
+    box-shadow: 5px 5px 5px black;
+}
 .boton-editar{
     border: 2px solid black; 
     border-radius: 10px;
     background-color: yellow;
     width: 40%;
+}
+.boton-editar:hover{
+    box-shadow: 5px 5px 5px black;
 }
 .parrafo-central{
     border: 2px solid black;
