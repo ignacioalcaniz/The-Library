@@ -18,7 +18,7 @@ export const CompPadre = ({ children }) => {
     const[buyer,setBuyer]=useState({
         nombre:"",
         apellido:"",
-        telefono:"",
+       telefono:"",
         direccion:"",
         email:""
     })

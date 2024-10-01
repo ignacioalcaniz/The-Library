@@ -13,7 +13,7 @@ export const Carrito = () => {
   const handleChange = (e) => {
     setBuyer({
       ...buyer,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value.trim()
     })
   }
 
