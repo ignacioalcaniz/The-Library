@@ -99,3 +99,6 @@ width: 40%;
 .boton-crear-perfil:hover{
     box-shadow: 5px 5px 5px  blue;
 }
+.p-empty:hover{
+text-decoration: underline;
+}

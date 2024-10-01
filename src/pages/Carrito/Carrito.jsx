@@ -45,7 +45,7 @@ export const Carrito = () => {
     <>
     
       <main className="m-5">
-        <h4 className="text-6xl text-center h4-titulos m-2 rounded">Carrito:</h4>
+        <h4 className="text-6xl text-center h4-titulos m-2 rounded">CARRITO:</h4>
        
           {carrito.length > 0 && showform &&
            <div className="div-form">
@@ -60,7 +60,7 @@ export const Carrito = () => {
 
         <div className=" contenedor-carrito ">
           {carrito.length === 0 ? (
-            <p>No hay productos en el carrito.</p>
+            <p className="p-empty">No hay productos en el carrito.</p>
           ) : (
             <ul >
               <p className="text-center parrafo-central">Productos agregados al carrito:</p>
