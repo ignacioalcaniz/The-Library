@@ -43,6 +43,7 @@ export const Carrito = () => {
 
   return (
     <>
+    
       <main className="m-5">
         <h4 className="text-6xl text-center h4-titulos m-2 rounded">Carrito:</h4>
        
@@ -82,6 +83,8 @@ export const Carrito = () => {
                             <input
                               type="number"
                               value={item.cantidad}
+                              min={1}
+                              max={item.stock}
                               onChange={(e) => handleInputChange(e, item.id)}
                             />
                             <button className="boton-aceptar" onClick={() => {

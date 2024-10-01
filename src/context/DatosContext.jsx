@@ -37,7 +37,7 @@ export const CompPadre = ({ children }) => {
 
 
 
-    const comprar = ({ id, name, img, descripcion, precio }, q) => {
+    const comprar = ({ id, name, img, descripcion, precio,stock }, q) => {
         if (q > 0) {
             setCarrito((prevCarrito) => {
                 const existingItemIndex = prevCarrito.findIndex(item => item.id === id);
@@ -50,7 +50,7 @@ export const CompPadre = ({ children }) => {
 
                     return [
                         ...prevCarrito,
-                        { id, name, img, descripcion, precio, cantidad: q },
+                        { id, name, img, descripcion, precio,stock, cantidad: q },
                     ];
                 }
             });
