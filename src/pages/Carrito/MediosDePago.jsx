@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import "./Medios.css"
 import { DatosContext } from "../../context/DatosContext"
 import { Formulario } from "./Formulario"
-import { collection,getFirestore,addDoc } from "firebase/firestore/lite"
+import { collection, getFirestore, addDoc } from "firebase/firestore/lite"
 
 
 
@@ -14,6 +14,7 @@ export const MediosDePago = () => {
     const [cuotas, setCuotas] = useState(0)
     const [showcuotas, setShowcuotas] = useState(false)
     const [selectedCard, setSelectedCard] = useState("");
+    const [btn, setBton] = useState(false)
 
 
 
@@ -46,7 +47,7 @@ export const MediosDePago = () => {
 
         fieldsToValidate.forEach(field => {
             if (!card[field]) {
-                localError[field] = `el ${field} es obligatorio`;
+                localError[field] = `el campo: ${field} es obligatorio`;
             }
         });
         if (Object.keys(localError).length === 0) {
@@ -58,6 +59,7 @@ export const MediosDePago = () => {
             } else if (selectedCard === "debito") {
                 setShowdiv2(false);
                 setShowcuotas(false);
+                setBton(true)
 
             }
         } else {
@@ -67,22 +69,22 @@ export const MediosDePago = () => {
 
 
 
-    const addToCart =(e)=> {
-        const db=getFirestore()
-        const orderCollection=collection(db,"orders")
+    const addToCart = (e) => {
+        const db = getFirestore()
+        const orderCollection = collection(db, "orders")
         submit(e);
 
-        const purchase={
+        const purchase = {
             Productos: carrito,
             InfoComprador: { buyer, card },
             Total: total(),
             Cuotas: cuotas,
-            Date:new Date()
+            Date: new Date()
         }
-        addDoc(orderCollection,purchase)
+        addDoc(orderCollection, purchase)
         clearCarrito()
-        
-        
+
+
 
     }
     return (
@@ -119,6 +121,10 @@ export const MediosDePago = () => {
                             </div>
                         )}
                     </div>
+
+
+
+
                     <div className="col-6 div-debito mb-3">
                         <button onClick={() => {
                             setShowdiv2(true);
@@ -128,15 +134,25 @@ export const MediosDePago = () => {
                         }} className="boton-debito">PAGA CON TARJETA DE DEBITO:</button>
                         {showdiv2 && (
 
-                            <>
-                                <div className="div-form-pago  ">
-                                    <Formulario title={"Complete informacion de su tarjeta:"} formData={card} handleChange={handleChange} submit={submit} error={error} />
-                                    <button type="submit" onClick={addToCart} className="boton-finalizar">Finalizar Compra</button>
+
+                            <div className="div-form-pago  ">
+                                <Formulario title={"Complete informacion de su tarjeta:"} formData={card} handleChange={handleChange} submit={submit} error={error} />
+                                <div className="div-crear-perfil ">
+                                    <button className="boton-crear-perfil" type="submit" onClick={submit} >ACEPTAR</button>
                                 </div>
-
-                            </>
-
+                               
+                            </div>
                         )}
+                         {btn && (
+                            <div className=" div-cuotas d-flex flex-column align-items-center gap-4 ">
+                                <h5 className="h3-cuotas">Su tarjeta fue cargada con exito!</h5>
+                                <button type="submit" onClick={addToCart} className="boton-finalizar">Finalizar Compra</button>
+                            </div>
+                        )}
+                        
+
+
+
 
                     </div>
                 </div>
