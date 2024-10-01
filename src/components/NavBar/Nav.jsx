@@ -13,8 +13,8 @@ const{carrito}=useContext(DatosContext)
 
                 <ul className="	flex justify-between m-6 text-2xl p-auto align-items-center  ">
                     <li><Link to={"/TheLibrary"}>INICIO</Link></li>
-                    <li><Link to={"/TheLibrary/OtroLibros"}>OTROS LIBROS:</Link></li>
-                    <li><Link to={"/TheLibrary/Ofertas"}>OFERTAS:</Link></li>
+                    <li><Link to={"/TheLibrary/OtroLibros"}>OTROS LIBROS</Link></li>
+                    <li><Link to={"/TheLibrary/Ofertas"}>OFERTAS</Link></li>
                     <li><Link to={"/TheLibrary/Carrito"}><CardWidget /><p className="text-center">{carrito.length}</p></Link></li>
                 </ul>
                
