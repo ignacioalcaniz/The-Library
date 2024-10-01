@@ -5,12 +5,18 @@ width: 50%;
 margin: 10px;
 background-color: blue;
 }
+.boton-credito:hover{
+    box-shadow: 5px 5px 5px blue;
+}
 .boton-debito{
 border: 2px solid black;
 border-radius: 10px;
 width:50%;
 margin: 10px;
 background-color: blue;
+}
+.boton-debito:hover{
+    box-shadow: 5px 5px 5px blue;
 }
 .div-form-pago{
     display: flex;

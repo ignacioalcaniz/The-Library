@@ -88,11 +88,11 @@ export const MediosDePago = () => {
     return (
         <>
             <main >
-                <h4 className="text-6xl text-center h4-titulos m-2 rounded">Finalizar compra:</h4>
+                <h4 className=" m-5 text-6xl text-center h4-titulos m-2 rounded">Finalizar compra:</h4>
 
 
                 <div className="d-flex flex-row row m-auto">
-                    <div className="col-6 div-credito mb-3 ">
+                    <div className="col-6 div-credito mb-3  ">
                         <button onClick={() => { setShowdiv(true); setShowdiv2(false); setSelectedCard("credito"); }} className="boton-credito">PAGA CON TARJETA DE CREDITO:</button>
                         {showdiv && (
 
