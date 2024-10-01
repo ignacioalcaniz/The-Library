@@ -22,7 +22,7 @@ export const Ofertas = () => {
     }, []);
 
     return (
-        <main >
+        <main className="m-5" >
             <h4 className="text-6xl text-center h4-titulos m-2 rounded">OFERTAS:</h4>
             <div className="row">
                 {libro.length > 0 ? (

@@ -15,14 +15,14 @@
 }
 .boton-count-1{
     border: 2px solid black;
-    border-radius: 2px;
+    border-radius: 5px;
     width: 50%;
     height: 100%;
     background-color: red;
 }
 .boton-count-2{
     border: 2px solid black;
-    border-radius: 2px;
+    border-radius: 5px;
     width: 50%;
     height: 100%;
     background-color: green;
