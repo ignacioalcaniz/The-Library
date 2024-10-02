@@ -15,6 +15,8 @@ export const MediosDePago = () => {
     const [showcuotas, setShowcuotas] = useState(false)
     const [selectedCard, setSelectedCard] = useState("");
     const [btn, setBton] = useState(false)
+  
+
 
 
 
@@ -95,17 +97,17 @@ export const MediosDePago = () => {
 
                 <div className="d-flex flex-row row m-auto">
                     <div className="col-6 div-credito mb-3  ">
-                        <button onClick={() => { setShowdiv(true); setShowdiv2(false); setSelectedCard("credito"); }} className="boton-credito">PAGA CON TARJETA DE CREDITO:</button>
+                        <button onClick={() => { setShowdiv(true); setShowdiv2(false); setSelectedCard("credito");setBton(false) }} className="boton-credito" >PAGA CON TARJETA DE CREDITO:</button>
                         {showdiv && (
 
                             <div className="div-form-pago  ">
                                 <Formulario title={"Complete informacion de su tarjeta:"} formData={card} handleChange={handleChange} submit={submit} error={error} />
                                 <div className="div-crear-perfil ">
-                                    <button className="boton-crear-perfil" type="submit" onClick={submit}>ACEPTAR</button>
+                                    <button className="boton-crear-perfil" onClick={submit} type="submit" >ACEPTAR</button>
                                 </div>
                             </div>
                         )}
-                        {showcuotas && (
+                        {showcuotas && !btn && (
                             <div className="div-cuotas d-flex flex-column align-items-center gap-4">
                                 <h3 className="h3-cuotas">Elija Cantidad de cuotas:</h3>
                                 <button onClick={() => { setCuotas(3); }} className={`cuota-boton ${cuotas === 3 ? 'boton-rojo' : ''}`} >
@@ -131,25 +133,28 @@ export const MediosDePago = () => {
                             setShowdiv(false);
                             setShowcuotas(false)
                             setSelectedCard("debito");
-                        }} className="boton-debito">PAGA CON TARJETA DE DEBITO:</button>
+                            
+                          
+                        }} className="boton-debito" >PAGA CON TARJETA DE DEBITO:</button>
                         {showdiv2 && (
 
 
                             <div className="div-form-pago  ">
+                                
                                 <Formulario title={"Complete informacion de su tarjeta:"} formData={card} handleChange={handleChange} submit={submit} error={error} />
                                 <div className="div-crear-perfil ">
-                                    <button className="boton-crear-perfil" type="submit" onClick={submit} >ACEPTAR</button>
+                                    <button className="boton-crear-perfil" onClick={submit} type="submit"  >ACEPTAR</button>
                                 </div>
                                
                             </div>
                         )}
-                         {btn && (
+                         {btn &&  (
                             <div className=" div-cuotas d-flex flex-column align-items-center gap-4 ">
                                 <h5 className="h3-cuotas">Su tarjeta fue cargada con exito!</h5>
                                 <button type="submit" onClick={addToCart} className="boton-finalizar">Finalizar Compra</button>
                             </div>
                         )}
-                        
+                         
 
 
 
