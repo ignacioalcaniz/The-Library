@@ -21,7 +21,9 @@ export const Carrito = () => {
   const submit = (e) => {
     e.preventDefault();
     const localError = {};
-    const fieldsToValidate = ['nombre', 'direccion', 'email'];
+    const fieldsToValidate = ['nombre', 'direccion', 'email',"telefono"];
+    
+  
 
     fieldsToValidate.forEach(field => {
       if (!buyer[field]) {
@@ -29,6 +31,7 @@ export const Carrito = () => {
         localError[field] = `El campo: ${field} es obligatorio`;
       }
     });
+   
 
     if (Object.keys(localError).length === 0) {
       setShowform(false);
@@ -42,21 +45,19 @@ export const Carrito = () => {
 
 
   return (
-    <>
+    
     
       <main className="m-5">
         <h4 className="text-6xl text-center h4-titulos m-2 rounded">CARRITO:</h4>
+ 
        
-          {carrito.length > 0 && showform &&
+          {carrito.length > 0 && showform &&(
            <div className="div-form">
             <Formulario title={"Complete el formulario de perfil:"} handleChange={handleChange} submit={submit} formData={buyer} error={error} />
           <div className="div-crear-perfil ">
             <button className="boton-crear-perfil" type="submit" onClick={submit}>ACEPTAR</button>
           </div>
-        </div>}
-
-
-
+        </div>)}
 
         <div className=" contenedor-carrito ">
           {carrito.length === 0 ? (
@@ -109,17 +110,11 @@ export const Carrito = () => {
             <div className="w-25 d-flex flex-column m-2 ">
               <p className=" p-total text-center"> TOTAL A PAGAR:${finalPrice}</p>
               {!showform && <button onClick={finalizarCompra} className="boton-orden w-25 m-auto  ">PAGAR</button>}
-
-
             </div>
-
-          }
+            }
         </div>
-
-
-
       </main>
 
-    </>
+   
   )
 }

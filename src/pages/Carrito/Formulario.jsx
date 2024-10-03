@@ -16,8 +16,8 @@ export const Formulario = ({ submit, handleChange, formData,error,title }) => {
                 {Object.keys(formData).map((key, i) => (
                     <div className=" div-form d-flex flex-column " key={i}>
                         
-                        <label htmlFor={key}  >Ingrese:{key}</label>
-                        <input type={key} name={key} id={key} onChange={handleChange} />
+                        <label  htmlFor={key}  >Ingrese:{key}</label>
+                        <input  type={key} name={key} id={key} onChange={handleChange} />
                         {
                        error[key]&& <span>{error[key]}</span>
                         }
