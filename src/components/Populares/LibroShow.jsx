@@ -9,7 +9,7 @@ export const LibroShow=({titulo,autor,imagen,info,precio})=>{
         <>
         <div className="carta ">
             <h3 className="text-center">{titulo.name}</h3>
-            <h4 className="text-center">{autor.autor}</h4>
+            <h4 className="text-center">Autor:{autor.autor}</h4>
             <img className="img-show" src={imagen.img} alt="bookCover" />
            <p className="text-center"> ${precio.precio}</p>
             <button className="botonInfo">{info}</button>

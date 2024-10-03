@@ -29,8 +29,7 @@ export const Ofertas = () => {
                     libro.map((libro) => (
                         <div key={libro.id} className="card">
                             <h5 className="text-center">{libro.name}</h5>
-                            <h5 className="text-center">{libro.autor}</h5>
-                            <h5 className="text-center">{libro.categoria}</h5>
+                            <h5 className="text-center">Autor:{libro.autor}</h5>
                             <img className="img-lista" src={libro.img} alt={libro.name} />
                             <h6 className="text-center">Precio: ${libro.precio}</h6>
                             <button className="boton-info">
