@@ -97,9 +97,16 @@ export const MediosDePago = () => {
 
                 <div className="d-flex flex-row row m-auto">
                     <div className="col-6 div-credito mb-3  ">
-                        <button onClick={() => { setShowdiv(true); setShowdiv2(false); setSelectedCard("credito");setBton(false) }} className="boton-credito" >PAGA CON TARJETA DE CREDITO:</button>
+                        <button onClick={() => { setShowdiv(true); 
+                            setShowdiv2(false); 
+                            setSelectedCard("credito");
+                            setBton(false);
+                        setCard({  TITULAR: "",
+                            NUMERO: "",
+                            CODIGO: "",
+                            VENCIMIENTO: ""})}}
+                            className="boton-credito" >PAGA CON TARJETA DE CREDITO:</button>
                         {showdiv && (
-
                             <div className="div-form-pago  ">
                                 <Formulario title={"Complete informacion de su tarjeta:"} formData={card} handleChange={handleChange} submit={submit} error={error} />
                                 <div className="div-crear-perfil ">
@@ -133,6 +140,10 @@ export const MediosDePago = () => {
                             setShowdiv(false);
                             setShowcuotas(false)
                             setSelectedCard("debito");
+                            setCard({  TITULAR: "",
+                                NUMERO: "",
+                                CODIGO: "",
+                                VENCIMIENTO: ""})
                             
                           
                         }} className="boton-debito" >PAGA CON TARJETA DE DEBITO:</button>
