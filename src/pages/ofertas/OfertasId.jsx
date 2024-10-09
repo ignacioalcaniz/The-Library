@@ -9,6 +9,15 @@ import { DatosContext } from "../../context/DatosContext";
 
 
 export const OfertasId=()=>{
+
+  useEffect(() => {
+    document.title = "Ofertas - THE LIBRARY";
+    const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.rel = 'icon';
+    link.href = '/img/oferta.ico';
+    document.head.appendChild(link);
+  }, []);
+
       const[libro,setLibros]=useState([])
 
       const { comprar } = useContext(DatosContext);

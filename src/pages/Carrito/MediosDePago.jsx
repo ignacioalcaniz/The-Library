@@ -3,11 +3,22 @@ import "./Medios.css"
 import { DatosContext } from "../../context/DatosContext"
 import { Formulario } from "./Formulario"
 import { collection, getFirestore, addDoc } from "firebase/firestore/lite"
+import { useEffect } from "react"
 
 
 
 
 export const MediosDePago = () => {
+
+
+    useEffect(() => {
+        document.title = "Medios de Pago- THE LIBRARY";
+        const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+        link.rel = 'icon';
+        link.href = '/img/tarjeta.ico';
+        document.head.appendChild(link);
+      }, []);
+    
     const { total, carrito, buyer, clearCarrito } = useContext(DatosContext)
     const [showdiv, setShowdiv] = useState(false)
     const [showdiv2, setShowdiv2] = useState(false)

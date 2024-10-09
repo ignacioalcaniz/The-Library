@@ -33,6 +33,14 @@ export const LibroId = () => {
    
   }, [popularId]);
 
+  useEffect(() => {
+    document.title = "Inicio - THE LIBRARY";
+    const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.rel = 'icon';
+    link.href = '../img/manual.ico';
+    document.head.appendChild(link);
+  }, []);
+
   return (
     <main>
             <div className='div-carta'>

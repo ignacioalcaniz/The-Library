@@ -9,7 +9,7 @@ export const Inicio=()=>{
     document.title = "Inicio - THE LIBRARY";
     const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.rel = 'icon';
-    link.href = './img/libro.ico';
+    link.href = '../img/manual.ico';
     document.head.appendChild(link);
   }, []);
 
