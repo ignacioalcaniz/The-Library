@@ -10,6 +10,14 @@ export const Categorias = () => {
     const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
+        document.title = "Otros Libros - THE LIBRARY";
+        const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+        link.rel = 'icon';
+        link.href = '../img/libros.ico';
+        document.head.appendChild(link);
+      }, []);
+
+    useEffect(() => {
         const fetchData = async () => {
             const db = getFirestore();
             const librosCollection = collection(db, "libros");

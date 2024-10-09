@@ -2,10 +2,18 @@ import { useContext } from "react";
 import { DatosContext } from "../../context/DatosContext";
 import "./Carrito.css"
 import { Formulario } from "./Formulario";
+import { useEffect } from "react";
 
 
 
 export const Carrito = () => {
+  useEffect(() => {
+    document.title = "Carrito- THE LIBRARY";
+    const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.rel = 'icon';
+    link.href = '../img/carrito.ico';
+    document.head.appendChild(link);
+  }, []);
 
   const { error, setError, buyer, setBuyer, showform, setShowform, finalizarCompra, finalPrice, carrito, eliminar, showinput, editar, handleInputChange, editingProductId, setShowInput } = useContext(DatosContext);
 
