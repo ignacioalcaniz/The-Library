@@ -32,5 +32,9 @@ button{
 }
 .img-busqueda:hover{
   
+   
     box-shadow: 5px 5px 5px black;
+}
+.img-busqueda{
+    width: 50px;
 }
